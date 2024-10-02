@@ -82,7 +82,7 @@ plt.xlabel("Date", fontsize=15)
 plt.ylabel("Number of Orders", fontsize=15)
 st.pyplot(fig)
 
-# Customer Distribution
+
 col1, col2 = st.columns(2)
 
 with col1:
@@ -107,7 +107,7 @@ with col2:
     plt.xticks(rotation=45)
     st.pyplot(fig2)
 
-# Customer Activity Analysis
+
 st.header('Jumlah Order per Bulan')
 filtered_all_df['purchase_month'] = filtered_all_df['order_purchase_timestamp'].dt.to_period('M')
 monthly_orders = filtered_all_df.groupby('purchase_month').size().reset_index(name='count')
@@ -121,7 +121,6 @@ ax3.set_ylabel('Jumlah Order', fontsize=12)
 plt.xticks(rotation=45)
 st.pyplot(fig3)
 
-# RFM Analysis
 st.header('RFM Analysis')
 
 latest_date = filtered_all_df['order_purchase_timestamp'].max()
